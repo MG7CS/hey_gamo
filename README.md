@@ -1,111 +1,235 @@
 # GAMO Marketing Site
 
-A single-page marketing site for GAMO — a personal assistant on WhatsApp that helps people navigate life in a new country, in their language.
+A mobile-first, single-page marketing website for GAMO - a personal WhatsApp assistant helping immigrants navigate life in a new country.
 
-## Features
+🌐 **Live Site:** [heygamo.com](https://heygamo.com)  
+📱 **WhatsApp:** [+1 415-523-8886](https://wa.me/14155238886?text=join+cow-wear) (Twilio Sandbox)
 
-- **Hero section** with cycling photos and multilingual headlines (Spanish, Portuguese, Kinyarwanda)
-- **WhatsApp chat mockups** showing real conversations in multiple languages
-- **Full-screen carousel** demonstrating 4 key use cases with phone mockups
-- **Onboarding modal** with multi-language/multi-topic selection
-- **Stripe integration** for 14-day free trial → $9.99/month subscription
-- **Mobile-first design** optimized for WhatsApp sharing
+---
 
-## Tech Stack
+## 🎯 Overview
 
-- Next.js 14 (App Router)
-- TypeScript
-- Tailwind CSS
-- Framer Motion (animations)
-- Stripe SDK
+GAMO is a WhatsApp-based personal assistant that helps immigrants with:
+- Understanding bills and official letters
+- Healthcare and school enrollment questions
+- Knowing their rights as immigrants
+- Learning English pronunciation and vocabulary
 
-## Getting Started
+This site showcases the product with real WhatsApp conversation examples in multiple languages (Spanish, Portuguese, Swahili, English).
 
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+---
 
-2. **Set up environment variables:**
-   ```bash
-   cp .env.local.example .env.local
-   ```
-   
-   Then edit `.env.local` with your keys:
-   ```
-   STRIPE_SECRET_KEY=sk_test_...
-   STRIPE_PRICE_ID=price_...
-   NEXT_PUBLIC_WHATSAPP_NUMBER=+16503744396
-   ```
+## 🚀 Tech Stack
 
-3. **Run the dev server:**
-   ```bash
-   npm run dev
-   ```
-   
-   Open [http://localhost:3000](http://localhost:3000)
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Animations:** Framer Motion
+- **Payments:** Stripe (embedded checkout)
+- **Deployment:** Vercel
 
-4. **Build for production:**
-   ```bash
-   npm run build
-   npm start
-   ```
+---
 
-## Deployment
+## 📁 Project Structure
 
-Deploy to Vercel:
+```
+gamo-site/
+├── app/
+│   ├── api/
+│   │   ├── create-checkout-session/  # Stripe checkout session API
+│   │   └── subscribe/                 # Legacy subscription API
+│   ├── subscribe/                     # Stripe checkout page (currently disabled)
+│   ├── welcome/                       # Post-signup success page
+│   ├── globals.css                    # Global styles + Tailwind config
+│   ├── layout.tsx                     # Root layout
+│   └── page.tsx                       # Main landing page
+├── components/
+│   ├── Hero.tsx                       # Hero with rotating headlines & photos
+│   ├── PhoneMockup.tsx                # WhatsApp conversation showcase
+│   ├── HowItWorks.tsx                 # 3-step guide
+│   ├── HelpCarousel.tsx               # Feature carousel with chat examples
+│   ├── Testimonials.tsx               # User testimonials
+│   ├── SimpleCta.tsx                  # Call-to-action section
+│   ├── Footer.tsx                     # Site footer
+│   └── ...                            # Other components
+├── lib/
+│   ├── config.ts                      # WhatsApp config & constants
+│   └── stripe.ts                      # Stripe client initialization
+├── public/
+│   └── assets/                        # Hero background images
+└── STRIPE_APPROVAL_NOTES.md           # Stripe review instructions
+```
+
+---
+
+## 🛠️ Setup & Development
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- Stripe account (for payments)
+- Twilio WhatsApp sandbox (for testing)
+
+### Installation
 
 ```bash
-npx vercel
+# Clone the repository
+git clone https://github.com/MG7CS/gamo-site.git
+cd gamo-site
+
+# Install dependencies
+npm install
+
+# Create .env.local file
+cp .env.example .env.local
+```
+
+### Environment Variables
+
+Create a `.env.local` file with:
+
+```env
+# Stripe Keys (get from https://dashboard.stripe.com/apikeys)
+STRIPE_SECRET_KEY=sk_test_...
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
+STRIPE_PRICE_ID=price_...
+
+# WhatsApp Number
+NEXT_PUBLIC_WHATSAPP_NUMBER=+14155238886
+```
+
+### Run Development Server
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the site.
+
+### Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 🎨 Key Features
+
+### 1. **Multilingual Hero Section**
+- Rotating headlines in 4 languages (Portuguese, French, Swahili, English)
+- Cycling background photos of diverse users
+- Floating chat bubbles for visual interest
+- Synced WhatsApp chat preview
+
+### 2. **Interactive Phone Mockups**
+- Real WhatsApp-style conversations
+- Auto-cycling between text, voice, and photo examples
+- Authentic chat bubble styling with timestamps and read receipts
+
+### 3. **Feature Carousel**
+- Full-screen slides for each use case
+- Phone mockup with real chat examples
+- Language-specific floating bubbles
+- Outcome highlights with checkmarks
+
+### 4. **Mobile-First Design**
+- Responsive breakpoints for all screen sizes
+- Touch-friendly interactions
+- Optimized images with Next.js Image component
+- Smooth animations with Framer Motion
+
+---
+
+## 💳 Stripe Integration (Currently Disabled)
+
+The Stripe checkout is **temporarily disabled** for Stripe approval. All CTAs currently redirect to WhatsApp sandbox.
+
+### To Re-enable After Approval:
+
+1. Open `app/subscribe/page.tsx`
+2. Delete lines 1-24 (temporary redirect code)
+3. Uncomment lines 28-180 (Stripe checkout code)
+4. Update all CTA buttons to use `router.push('/subscribe')` instead of WhatsApp links
+5. Deploy
+
+See `STRIPE_APPROVAL_NOTES.md` for detailed instructions.
+
+---
+
+## 📱 WhatsApp Integration
+
+### Current Setup (Twilio Sandbox)
+- **Number:** +1 415-523-8886
+- **Join Code:** `join cow-wear`
+- **Link:** `https://wa.me/14155238886?text=join+cow-wear`
+
+### For Production
+When you have a WhatsApp Business API number:
+1. Update `NEXT_PUBLIC_WHATSAPP_NUMBER` in `.env.local`
+2. Replace all `wa.me/14155238886` links with your production number
+3. Remove the `join+cow-wear` join code
+
+---
+
+## 🚢 Deployment
+
+### Deploy to Vercel (Recommended)
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
 ```
 
 Or connect your GitHub repo to Vercel for automatic deployments.
 
-Make sure to add your environment variables in the Vercel dashboard.
+### Environment Variables on Vercel
+Add these in your Vercel project settings:
+- `STRIPE_SECRET_KEY`
+- `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`
+- `STRIPE_PRICE_ID`
+- `NEXT_PUBLIC_WHATSAPP_NUMBER`
 
-## Project Structure
+---
 
-```
-/app
-  /layout.tsx          — root layout with Nunito font
-  /page.tsx            — main page composing all sections
-  /globals.css         — Tailwind + custom WhatsApp styles
-  /api/subscribe/route.ts — Stripe subscription endpoint
+## 📝 Content Updates
 
-/components
-  /Navbar.tsx          — sticky header
-  /Hero.tsx            — cycling photos + multilingual headlines
-  /PhoneMockup.tsx     — 3 swipeable WhatsApp chats
-  /ChatBubble.tsx      — WhatsApp-style message components
-  /HowItWorks.tsx      — 3-step explainer
-  /HelpCarousel.tsx    — full-screen feature carousel
-  /Testimonials.tsx    — user quotes in multiple languages
-  /SimpleCta.tsx       — WhatsApp CTA section
-  /CtaBanner.tsx       — trial signup CTA
-  /OnboardingModal.tsx — multi-step form
-  /Footer.tsx          — footer with links
+### Update Hero Headlines
+Edit `components/Hero.tsx` → `heroSlides` array
 
-/lib
-  /config.ts           — WhatsApp number, messages, constants
-  /stripe.ts           — Stripe client initialization
-```
+### Update Features
+Edit `components/HelpCarousel.tsx` → `features` array
 
-## Key Design Decisions
+### Update Testimonials
+Edit `components/Testimonials.tsx` → `testimonials` array
 
-- **Colors**: WhatsApp green (#075E54, #25D366) + warm cream (#FFF8F0)
-- **Typography**: Nunito (rounded, friendly)
-- **Mobile-first**: All layouts start from mobile breakpoint
-- **WhatsApp fidelity**: Chat bubbles match real WhatsApp styling exactly
-- **Performance**: Optimized for 3G connections (target audience)
+### Update Pricing
+Edit `components/SimpleCta.tsx` and `app/subscribe/page.tsx`
 
-## Stripe Subscription Flow
+---
 
-1. User fills out onboarding form (languages, help topics, phone)
-2. `POST /api/subscribe` creates Stripe customer + subscription with 14-day trial
-3. User redirects to WhatsApp with pre-filled message in their language
-4. After 14 days, Stripe auto-charges $9.99/month
-5. User can cancel anytime by messaging GAMO on WhatsApp
+## 🐛 Known Issues
 
-## License
+- Stripe product summary header cannot be fully hidden in embedded checkout (Stripe limitation)
+- Floating chat bubbles hidden on mobile to prevent overlap
+- Hero headline height may need adjustment for very long translations
 
-All rights reserved © 2026 GAMO
+---
+
+## 📄 License
+
+Private repository - All rights reserved.
+
+---
+
+## 🤝 Contributing
+
+This is a private project. For questions or support, contact hello@heygamo.com.
+
+---
+
+**Built with 💚 for people navigating life in a new country**
