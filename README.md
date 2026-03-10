@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GAMO Marketing Site
+
+A single-page marketing site for GAMO — a personal assistant on WhatsApp that helps people navigate life in a new country, in their language.
+
+## Features
+
+- **Hero section** with cycling photos and multilingual headlines (Spanish, Portuguese, Kinyarwanda)
+- **WhatsApp chat mockups** showing real conversations in multiple languages
+- **Full-screen carousel** demonstrating 4 key use cases with phone mockups
+- **Onboarding modal** with multi-language/multi-topic selection
+- **Stripe integration** for 14-day free trial → $9.99/month subscription
+- **Mobile-first design** optimized for WhatsApp sharing
+
+## Tech Stack
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion (animations)
+- Stripe SDK
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Set up environment variables:**
+   ```bash
+   cp .env.local.example .env.local
+   ```
+   
+   Then edit `.env.local` with your keys:
+   ```
+   STRIPE_SECRET_KEY=sk_test_...
+   STRIPE_PRICE_ID=price_...
+   NEXT_PUBLIC_WHATSAPP_NUMBER=+16503744396
+   ```
+
+3. **Run the dev server:**
+   ```bash
+   npm run dev
+   ```
+   
+   Open [http://localhost:3000](http://localhost:3000)
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   npm start
+   ```
+
+## Deployment
+
+Deploy to Vercel:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx vercel
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or connect your GitHub repo to Vercel for automatic deployments.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Make sure to add your environment variables in the Vercel dashboard.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+/app
+  /layout.tsx          — root layout with Nunito font
+  /page.tsx            — main page composing all sections
+  /globals.css         — Tailwind + custom WhatsApp styles
+  /api/subscribe/route.ts — Stripe subscription endpoint
 
-To learn more about Next.js, take a look at the following resources:
+/components
+  /Navbar.tsx          — sticky header
+  /Hero.tsx            — cycling photos + multilingual headlines
+  /PhoneMockup.tsx     — 3 swipeable WhatsApp chats
+  /ChatBubble.tsx      — WhatsApp-style message components
+  /HowItWorks.tsx      — 3-step explainer
+  /HelpCarousel.tsx    — full-screen feature carousel
+  /Testimonials.tsx    — user quotes in multiple languages
+  /SimpleCta.tsx       — WhatsApp CTA section
+  /CtaBanner.tsx       — trial signup CTA
+  /OnboardingModal.tsx — multi-step form
+  /Footer.tsx          — footer with links
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+/lib
+  /config.ts           — WhatsApp number, messages, constants
+  /stripe.ts           — Stripe client initialization
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Key Design Decisions
 
-## Deploy on Vercel
+- **Colors**: WhatsApp green (#075E54, #25D366) + warm cream (#FFF8F0)
+- **Typography**: Nunito (rounded, friendly)
+- **Mobile-first**: All layouts start from mobile breakpoint
+- **WhatsApp fidelity**: Chat bubbles match real WhatsApp styling exactly
+- **Performance**: Optimized for 3G connections (target audience)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Stripe Subscription Flow
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. User fills out onboarding form (languages, help topics, phone)
+2. `POST /api/subscribe` creates Stripe customer + subscription with 14-day trial
+3. User redirects to WhatsApp with pre-filled message in their language
+4. After 14 days, Stripe auto-charges $9.99/month
+5. User can cancel anytime by messaging GAMO on WhatsApp
+
+## License
+
+All rights reserved © 2026 GAMO
