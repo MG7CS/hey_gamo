@@ -1,10 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-
 export default function Footer() {
-  const router = useRouter();
-
   return (
     <footer className="bg-gamo-dark">
       <div className="mx-auto max-w-6xl px-5 py-16">

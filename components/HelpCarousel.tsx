@@ -258,7 +258,7 @@ export default function HelpCarousel() {
               </p>
               <div className="mb-8 inline-block self-start rounded-xl bg-gamo-accent/10 px-5 py-3">
                 <p className="text-sm italic text-gamo-green">
-                  "{features[activeIndex].quote}"
+                  &ldquo;{features[activeIndex].quote}&rdquo;
                 </p>
               </div>
 

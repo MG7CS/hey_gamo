@@ -1,5 +1,7 @@
 "use client";
 
+import { useMemo } from "react";
+
 interface TextBubbleProps {
   type: "sent" | "received";
   text: string;
@@ -64,8 +66,12 @@ export function TextBubble({ type, text, time, read }: TextBubbleProps) {
   );
 }
 
+const generateWaveHeights = () => Array.from({ length: 12 }, () => Math.random() * 14 + 4);
+
 export function VoiceBubble({ type, duration, time, read }: VoiceBubbleProps) {
   const isSent = type === "sent";
+  const waveHeights = useMemo(() => generateWaveHeights(), []);
+
   return (
     <div className={`flex ${isSent ? "justify-end" : "justify-start"} mb-1.5`}>
       <div
@@ -84,10 +90,10 @@ export function VoiceBubble({ type, duration, time, read }: VoiceBubbleProps) {
           </button>
           <div className="flex-1">
             <div className="voice-wave h-5">
-              {Array.from({ length: 12 }).map((_, i) => (
+              {waveHeights.map((height, i) => (
                 <span
                   key={i}
-                  style={{ height: `${Math.random() * 14 + 4}px` }}
+                  style={{ height: `${height}px` }}
                 />
               ))}
             </div>

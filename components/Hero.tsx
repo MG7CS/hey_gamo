@@ -42,7 +42,7 @@ const heroSlides = [
       <>
         <div className="flex justify-end">
           <div className="wa-bubble-sent max-w-[85%] bg-wa-sent px-3 py-2 text-[13px] leading-snug text-gamo-dark shadow-sm">
-            Hey GAMO, j'ai reçu une facture de l'hôpital 😟
+            Hey GAMO, j&apos;ai reçu une facture de l&apos;hôpital 😟
             <span className="ml-2 inline-flex items-center gap-0.5 text-[10px] text-gamo-muted/60 float-right mt-1">
               10:30
               <svg width="14" height="9" viewBox="0 0 16 11" fill="none">
@@ -54,7 +54,7 @@ const heroSlides = [
         </div>
         <div className="flex justify-start">
           <div className="wa-bubble-received max-w-[85%] bg-white px-3 py-2 text-[13px] leading-snug text-gamo-dark shadow-sm">
-            Ne t'inquiète pas. Les hôpitaux ont des programmes d'aide. Ne paie rien — je t'aide. 💚
+            Ne t&apos;inquiète pas. Les hôpitaux ont des programmes d&apos;aide. Ne paie rien — je t&apos;aide. 💚
             <span className="ml-2 text-[10px] text-gamo-muted/60 float-right mt-1">10:31</span>
           </div>
         </div>
@@ -98,7 +98,7 @@ const heroSlides = [
       <>
         <div className="flex justify-end">
           <div className="wa-bubble-sent max-w-[85%] bg-wa-sent px-3 py-2 text-[13px] leading-snug text-gamo-dark shadow-sm">
-            Hey GAMO, how do I pronounce 'appointment'?
+            Hey GAMO, how do I pronounce &apos;appointment&apos;?
             <span className="ml-2 inline-flex items-center gap-0.5 text-[10px] text-gamo-muted/60 float-right mt-1">
               11:20
               <svg width="14" height="9" viewBox="0 0 16 11" fill="none">
@@ -110,7 +110,7 @@ const heroSlides = [
         </div>
         <div className="flex justify-start">
           <div className="wa-bubble-received max-w-[85%] bg-white px-3 py-2 text-[13px] leading-snug text-gamo-dark shadow-sm">
-            It's pronounced: uh-POINT-ment. Try it slowly: uh... POINT... ment 📖
+            It&apos;s pronounced: uh-POINT-ment. Try it slowly: uh... POINT... ment 📖
             <span className="ml-2 text-[10px] text-gamo-muted/60 float-right mt-1">11:21</span>
           </div>
         </div>

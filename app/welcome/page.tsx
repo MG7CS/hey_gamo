@@ -32,7 +32,7 @@ export default function WelcomePage() {
 
         {/* Headline */}
         <h1 className="mb-4 text-4xl font-extrabold text-gamo-dark sm:text-5xl lg:text-6xl">
-          You're in! Your 2-week free trial has started. 🎉
+          You&apos;re in! Your 2-week free trial has started. 🎉
         </h1>
 
         {/* Subtext */}

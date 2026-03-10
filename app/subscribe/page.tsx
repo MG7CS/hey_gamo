@@ -3,11 +3,12 @@
 
 "use client";
 
+import { useEffect } from "react";
+
 export default function SubscribePage() {
-  // Redirect to WhatsApp sandbox for now
-  if (typeof window !== "undefined") {
+  useEffect(() => {
     window.location.href = "https://wa.me/14155238886?text=join+cow-wear";
-  }
+  }, []);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-gamo-cream via-white to-gamo-cream">
@@ -16,7 +17,7 @@ export default function SubscribePage() {
           Redirecting to WhatsApp...
         </h1>
         <p className="text-gamo-muted">
-          If you're not redirected,{" "}
+          If you&apos;re not redirected,{" "}
           <a
             href="https://wa.me/14155238886?text=join+cow-wear"
             className="text-gamo-accent underline"
