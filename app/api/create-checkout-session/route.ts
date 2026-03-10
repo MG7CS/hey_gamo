@@ -3,12 +3,9 @@ import Stripe from "stripe";
 
 export async function POST(req: NextRequest) {
   try {
-    // Check if Stripe is configured
-    if (!process.env.STRIPE_SECRET_KEY) {
-      return NextResponse.json(
-        { error: "Stripe not configured" },
-        { status: 500 }
-      );
+    const stripeKey = process.env.STRIPE_SECRET_KEY;
+    if (!stripeKey) {
+      return Response.json({ error: 'Stripe not configured' }, { status: 500 });
     }
 
     const priceId = process.env.STRIPE_PRICE_ID;
@@ -20,8 +17,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Initialize Stripe only after confirming the key exists
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+    const stripe = new Stripe(stripeKey, {
       apiVersion: "2026-02-25.clover",
     });
 
