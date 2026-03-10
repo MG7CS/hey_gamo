@@ -1,5 +1,7 @@
 "use client";
 
+import { WHATSAPP_SANDBOX_LINK } from "@/lib/config";
+
 export default function Footer() {
   return (
     <footer className="bg-gamo-dark">
@@ -27,7 +29,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
                 <a
-                  href="https://wa.me/14155238886?text=join+cow-wear"
+                  href={WHATSAPP_SANDBOX_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-gamo-accent"
@@ -37,7 +39,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wa.me/14155238886?text=join+cow-wear"
+                  href={WHATSAPP_SANDBOX_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-gamo-accent"
@@ -69,7 +71,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wa.me/14155238886"
+                  href={WHATSAPP_SANDBOX_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-gamo-accent"

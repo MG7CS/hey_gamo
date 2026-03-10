@@ -4,10 +4,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { WHATSAPP_SANDBOX_LINK } from "@/lib/config";
 
 export default function SubscribePage() {
   useEffect(() => {
-    window.location.href = "https://wa.me/14155238886?text=join+cow-wear";
+    window.location.href = WHATSAPP_SANDBOX_LINK;
   }, []);
 
   return (
@@ -19,7 +20,7 @@ export default function SubscribePage() {
         <p className="text-gamo-muted">
           If you&apos;re not redirected,{" "}
           <a
-            href="https://wa.me/14155238886?text=join+cow-wear"
+            href={WHATSAPP_SANDBOX_LINK}
             className="text-gamo-accent underline"
           >
             click here

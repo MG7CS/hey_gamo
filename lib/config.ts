@@ -1,5 +1,7 @@
 export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "+14155238886";
 
+export const WHATSAPP_SANDBOX_LINK = "https://wa.me/14155238886?text=join+cow-wear";
+
 export const PREFILLED_MESSAGES: Record<string, string> = {
   spanish: "Hey GAMO, quiero empezar",
   portuguese: "Hey GAMO, quero começar",

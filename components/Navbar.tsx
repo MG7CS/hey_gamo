@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { WHATSAPP_SANDBOX_LINK } from "@/lib/config";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,7 +36,7 @@ export default function Navbar() {
         </Link>
 
         <a
-          href="https://wa.me/14155238886?text=join+cow-wear"
+          href={WHATSAPP_SANDBOX_LINK}
           target="_blank"
           rel="noopener noreferrer"
           className={`rounded-full px-5 py-2.5 text-sm font-bold transition-all active:scale-95 ${

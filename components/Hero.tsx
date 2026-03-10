@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { WHATSAPP_SANDBOX_LINK } from "@/lib/config";
 
 const heroSlides = [
   {
@@ -230,7 +231,7 @@ export default function Hero() {
           </p>
 
           <a
-            href="https://wa.me/14155238886?text=join+cow-wear"
+            href={WHATSAPP_SANDBOX_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 rounded-full bg-gamo-accent px-8 py-4 text-lg font-bold text-white shadow-lg shadow-gamo-accent/30 transition-all hover:bg-gamo-green hover:shadow-xl active:scale-95"

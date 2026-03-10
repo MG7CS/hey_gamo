@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { WHATSAPP_SANDBOX_LINK } from "@/lib/config";
 
 export default function WelcomePage() {
   return (
@@ -42,7 +43,7 @@ export default function WelcomePage() {
 
         {/* CTA Button */}
         <a
-          href="https://wa.me/14155238886?text=join+cow-wear"
+          href={WHATSAPP_SANDBOX_LINK}
           target="_blank"
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-3 rounded-full bg-gamo-accent px-10 py-5 text-xl font-bold text-white shadow-xl shadow-gamo-accent/30 transition-all hover:bg-gamo-green hover:shadow-2xl active:scale-95"
