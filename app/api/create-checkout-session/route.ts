@@ -1,12 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2026-02-25.clover",
-});
-
 export async function POST(req: NextRequest) {
   try {
+    // Check if Stripe is configured
+    if (!process.env.STRIPE_SECRET_KEY) {
+      return NextResponse.json(
+        { error: "Stripe not configured" },
+        { status: 500 }
+      );
+    }
+
     const priceId = process.env.STRIPE_PRICE_ID;
 
     if (!priceId) {
@@ -15,6 +19,11 @@ export async function POST(req: NextRequest) {
         { status: 500 }
       );
     }
+
+    // Initialize Stripe only after confirming the key exists
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+      apiVersion: "2026-02-25.clover",
+    });
 
     const origin = req.headers.get("origin") || "https://heygamo.com";
 
