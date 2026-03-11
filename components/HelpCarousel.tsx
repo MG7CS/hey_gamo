@@ -7,76 +7,89 @@ import { TextBubble, PhotoBubble } from "./ChatBubble";
 const features = [
   {
     id: 0,
-    title: "Bills & letters",
+    title: "Never Lose Job Opportunities.",
     description:
-      "Don't understand a bill or official letter? We explain it in plain language.",
-    quote: "Hey GAMO, what does this hospital bill mean?",
-    outcome: "Entendió su factura y le perdonaron $200",
+      "Send a photo of the job application form and GAMO explains everything in your language and translates your answers.",
+    quote: "Hey GAMO, I got a job application form and don't understand it.",
+    outcome: "Got the job — GAMO helped fill out every section.",
     bubbles: [
-      { text: "¿qué significa esto?", x: "5%", y: "15%", delay: 0 },
-      { text: "no entiendo esta carta", x: "8%", y: "65%", delay: 1.2 },
-      { text: "Hey GAMO, me ayudas?", x: "10%", y: "42%", delay: 2.4 },
+      { text: "what does this form mean?", x: "5%", y: "15%", delay: 0 },
+      { text: "Hey GAMO, can you help?", x: "8%", y: "65%", delay: 1.2 },
+      { text: "I need to apply today", x: "10%", y: "42%", delay: 2.4 },
     ],
     chat: (
       <div className="space-y-0.5 px-2.5 py-3">
         <TextBubble
           type="sent"
-          text="Hey GAMO, what does this hospital bill mean?"
+          text="Hey GAMO, I got a job application form and I don't understand it."
           time="10:30 AM"
+          read
+        />
+        <PhotoBubble type="sent" time="10:30 AM" read />
+        <TextBubble
+          type="received"
+          text="Got it! Question 3 asks if you have legal permission to work in the US — the answer is 'Yes'."
+          time="10:31 AM"
+        />
+        <TextBubble
+          type="received"
+          text="The EEO section at the bottom is optional — you don't need to fill it in. Want help with the experience section?"
+          time="10:31 AM"
+        />
+        <TextBubble
+          type="sent"
+          text="Yes please, what do I write for 'previous experience'?"
+          time="10:32 AM"
           read
         />
         <TextBubble
           type="received"
-          text="This is a bill for your emergency room visit. The total is $3,200, but you have options:"
-          time="10:31 AM"
-        />
-        <TextBubble
-          type="received"
-          text={`1️⃣ Ask for financial assistance\n2️⃣ Request a payment plan\n3️⃣ Negotiate the amount\n\nI can help you write the letter. Want me to?`}
-          time="10:31 AM"
+          text={`Try: "5 years of hands-on experience in construction and maintenance." Want me to tailor it to your background? 💚`}
+          time="10:32 AM"
         />
       </div>
     ),
   },
   {
     id: 1,
-    title: "Healthcare & schools",
+    title: "Car Insurance Application. Landlord Questions.",
     description:
-      "Questions about insurance, doctors, or enrolling your kids? We walk you through it.",
-    quote: "Hey GAMO, como faço pra matricular meu filho na escola?",
-    outcome: "Filho matriculado na escola — sem precisar de inglês",
+      "GAMO walks you through every step from understanding what your insurance actually covers to negotiating a better deal.",
+    quote: "Hey GAMO, my landlord sent me a letter and I'm worried.",
+    outcome: "Understood her rights and felt in control.",
     bubbles: [
-      { text: "como faço a matrícula?", x: "6%", y: "20%", delay: 0.4 },
-      { text: "qual é o próximo passo?", x: "8%", y: "58%", delay: 1.6 },
-      { text: "Hey GAMO, preciso de ajuda", x: "10%", y: "75%", delay: 0.8 },
+      { text: "what does this letter mean?", x: "6%", y: "20%", delay: 0.4 },
+      { text: "do I have to sign this?", x: "8%", y: "58%", delay: 1.6 },
+      { text: "Hey GAMO, help me", x: "10%", y: "75%", delay: 0.8 },
     ],
     chat: (
       <div className="space-y-0.5 px-2.5 py-3">
         <TextBubble
           type="sent"
-          text="Hey GAMO, como faço pra matricular meu filho na escola? A gente acabou de chegar em Providence."
+          text="Hey GAMO, my landlord sent me this letter and I'm worried."
           time="2:15 PM"
           read
         />
+        <PhotoBubble type="sent" time="2:15 PM" read />
         <TextBubble
           type="received"
-          text="Bem-vindo! Você vai precisar de: comprovante de endereço, certidão de nascimento e cartão de vacinas. O escritório fica na 797 Westminster St."
+          text="This is a lease renewal. Your rent will increase starting next month — but they gave you the required 30 days notice."
           time="2:16 PM"
         />
         <TextBubble
           type="received"
-          text="Quer que eu te diga o que falar quando chegar lá?"
+          text="You don't have to accept it as-is. Want me to write a polite letter asking them to keep your current rent?"
           time="2:16 PM"
         />
         <TextBubble
           type="sent"
-          text="Sim, e se eu não falar inglês bem?"
+          text="Yes! Can you write that for me?"
           time="2:17 PM"
           read
         />
         <TextBubble
           type="received"
-          text='Você tem direito a um intérprete — gratuito e obrigatório por lei. Diga: "I need an interpreter please." 💚'
+          text="Of course. I'll write it now — you just copy, sign, and send it. 💚"
           time="2:18 PM"
         />
       </div>
@@ -84,45 +97,11 @@ const features = [
   },
   {
     id: 2,
-    title: "Know your rights",
+    title: "Practice English Words and Pronunciation.",
     description:
-      "Understand your rights as a person living in the U.S. We help you feel informed.",
-    quote: "Hey GAMO, can my landlord raise rent without notice?",
-    outcome: "Hakuwalipa ongezeko la kodi haramu",
-    bubbles: [
-      { text: "haki zangu ni zipi?", x: "7%", y: "18%", delay: 0.6 },
-      { text: "anaweza kufanya hivyo?", x: "9%", y: "55%", delay: 1.8 },
-      { text: "Hey GAMO, nisaidie", x: "8%", y: "72%", delay: 1.0 },
-    ],
-    chat: (
-      <div className="space-y-0.5 px-2.5 py-3">
-        <TextBubble
-          type="sent"
-          text="Hey GAMO, can my landlord raise rent without notice?"
-          time="4:05 PM"
-          read
-        />
-        <PhotoBubble type="sent" time="4:05 PM" read />
-        <TextBubble
-          type="received"
-          text="No, they can't. In most states, landlords must give 30-60 days notice before raising rent."
-          time="4:06 PM"
-        />
-        <TextBubble
-          type="received"
-          text="This letter says the increase starts next month — that's legal if they sent it 30+ days ago. Want me to help you respond?"
-          time="4:06 PM"
-        />
-      </div>
-    ),
-  },
-  {
-    id: 3,
-    title: "Learn English",
-    description:
-      "Practice words and pronunciation with GAMO. Like a patient teacher in your pocket.",
-    quote: "Hey GAMO, how do I pronounce 'appointment'?",
-    outcome: "Felt confident at her job interview",
+      "English is a door. GAMO helps you open it without pressure, without judgment, and without embarrassment.",
+    quote: "Hey GAMO, how do I say 'appointment' correctly?",
+    outcome: "Felt confident at her doctor's appointment.",
     comingSoon: true,
     bubbles: [
       { text: "how do I say this?", x: "6%", y: "22%", delay: 0.2 },
@@ -133,19 +112,30 @@ const features = [
       <div className="space-y-0.5 px-2.5 py-3">
         <TextBubble
           type="sent"
-          text="Hey GAMO, how do I pronounce 'appointment'?"
+          text="Hey GAMO, how do I pronounce 'appointment' correctly?"
           time="11:20 AM"
           read
         />
         <TextBubble
           type="received"
-          text={`Great word! It's pronounced: uh-POINT-ment\n\n🔊 Listen: (audio coming soon)\n\nTry saying it slowly: uh... POINT... ment`}
+          text={"It's pronounced: uh-POINT-ment. Say it slowly: uh... POINT... ment. 🎤"}
           time="11:21 AM"
         />
         <TextBubble
           type="received"
-          text="Want to practice using it in a sentence? 📖"
+          text={"Now try using it: 'I have a doctor's appointment on Friday.' Go ahead!"}
           time="11:21 AM"
+        />
+        <TextBubble
+          type="sent"
+          text="I have a doctor appointment on Friday."
+          time="11:22 AM"
+          read
+        />
+        <TextBubble
+          type="received"
+          text={"Almost perfect! Just add 'a' before appointment. You've got this — keep going! 💚"}
+          time="11:22 AM"
         />
       </div>
     ),
@@ -233,7 +223,7 @@ export default function HelpCarousel() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 mx-auto flex max-w-7xl items-center px-5 lg:min-h-screen">
+      <div className="relative z-10 mx-auto flex max-w-7xl items-center px-5 lg:min-h-screen lg:pt-16">
         <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Left: Text content - left-aligned with more presence */}
           <AnimatePresence mode="wait">

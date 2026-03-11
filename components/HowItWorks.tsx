@@ -12,9 +12,18 @@ const steps = [
       </svg>
     ),
     title: "Open WhatsApp",
-    subtitle:
-      "Tap the button and start chatting — no number to save, no app to download",
+    subtitle: "Tap the button and start chatting — no app to download, no account needed",
     number: "1",
+  },
+  {
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
+      </svg>
+    ),
+    title: "Answer a few friendly questions",
+    subtitle: "A few friendly questions so GAMO understands your situation — it only takes a moment.",
+    number: "2",
   },
   {
     icon: (
@@ -22,18 +31,8 @@ const steps = [
         <path d="M12 15c1.66 0 2.99-1.34 2.99-3L15 6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 15 6.7 12H5c0 3.41 2.72 6.23 6 6.72V22h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z" />
       </svg>
     ),
-    title: "Ask anything",
-    subtitle: "Text, voice note, or photo — in your language",
-    number: "2",
-  },
-  {
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z" />
-      </svg>
-    ),
-    title: "Get help instantly",
-    subtitle: "Clear answers in your language, right away",
+    title: "Ask anything, get help instantly",
+    subtitle: "Text, voice note, or photo — in your language. Clear answers, right away",
     number: "3",
   },
 ];
@@ -53,7 +52,7 @@ export default function HowItWorks() {
             How it works
           </h2>
           <p className="text-lg text-gamo-muted">
-            Three steps. No signup. No app.
+            No app. Nothing complicated. Just chat.
           </p>
         </motion.div>
 

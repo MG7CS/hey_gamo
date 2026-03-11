@@ -45,10 +45,10 @@ export default function Testimonials() {
           className="mb-12 text-center"
         >
           <h2 className="mb-3 text-3xl font-extrabold text-gamo-dark sm:text-4xl">
-            People like you use GAMO
+            You come with courage. GAMO comes with answers.
           </h2>
           <p className="mx-auto max-w-md text-lg text-gamo-muted">
-            Hear from people who got help when they needed it most.
+            Real people. Real situations. Real help.
           </p>
         </motion.div>
 

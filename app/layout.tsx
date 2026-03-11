@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
+import CheckoutShell from "@/components/CheckoutShell";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -73,7 +74,9 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        {children}
+        <CheckoutShell>
+          {children}
+        </CheckoutShell>
       </body>
     </html>
   );

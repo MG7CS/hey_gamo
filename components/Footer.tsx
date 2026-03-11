@@ -1,8 +1,10 @@
 "use client";
 
 import { WHATSAPP_SANDBOX_LINK } from "@/lib/config";
+import { useCheckout } from "@/lib/checkout-context";
 
 export default function Footer() {
+  const { open } = useCheckout();
   return (
     <footer className="bg-gamo-dark">
       <div className="mx-auto max-w-6xl px-5 py-16">
@@ -28,14 +30,12 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
-                <a
-                  href={WHATSAPP_SANDBOX_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={open}
                   className="transition-colors hover:text-gamo-accent"
                 >
                   Try GAMO Free
-                </a>
+                </button>
               </li>
               <li>
                 <a
