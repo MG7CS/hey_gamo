@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { WHATSAPP_SANDBOX_LINK } from "@/lib/config";
+import { useCheckout } from "@/lib/checkout-context";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const { open } = useCheckout();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -35,18 +36,16 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <a
-          href={WHATSAPP_SANDBOX_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          onClick={open}
           className={`rounded-full px-5 py-2.5 text-sm font-bold transition-all active:scale-95 ${
             scrolled
               ? "bg-gamo-accent text-white shadow-md hover:bg-gamo-green hover:shadow-lg"
               : "bg-white/20 text-white backdrop-blur-sm hover:bg-white/30"
           }`}
         >
-          Try GAMO Free
-        </a>
+          Ask GAMO — it&apos;s free
+        </button>
       </div>
     </nav>
   );
