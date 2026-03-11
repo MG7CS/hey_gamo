@@ -38,14 +38,12 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <a
-                  href={WHATSAPP_SANDBOX_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={open}
                   className="transition-colors hover:text-gamo-accent"
                 >
-                  Chat on WhatsApp
-                </a>
+                  Start free trial
+                </button>
               </li>
               <li>
                 <span className="text-gray-500">
