@@ -7,35 +7,6 @@ import { useCheckout } from "@/lib/checkout-context";
 
 const heroSlides = [
   {
-    headline: "te ayuda.",
-    lang: "es",
-    bgImage: "/assets/hero-woman-latina-landscape.png",
-    bgImagePortrait: "/assets/hero-woman-latina-portrait.png",
-    bgPosition: "object-top",
-    chat: (
-      <>
-        <div className="flex justify-end">
-          <div className="wa-bubble-sent max-w-[85%] bg-wa-sent px-3 py-2 text-[13px] leading-snug text-gamo-dark shadow-sm">
-            Hey GAMO, como faço pra matricular meu filho na escola?
-            <span className="ml-2 inline-flex items-center gap-0.5 text-[10px] text-gamo-muted/60 float-right mt-1">
-              14:20
-              <svg width="14" height="9" viewBox="0 0 16 11" fill="none">
-                <path d="M11.071 0.653l-5.657 5.657-1.414-1.414L2.586 6.31l2.828 2.829 7.071-7.071-1.414-1.415z" fill="#53BDEB" />
-                <path d="M14.071 0.653l-5.657 5.657-0.707-0.707-1.414 1.414 2.121 2.122 7.071-7.071-1.414-1.415z" fill="#53BDEB" />
-              </svg>
-            </span>
-          </div>
-        </div>
-        <div className="flex justify-start">
-          <div className="wa-bubble-received max-w-[85%] bg-white px-3 py-2 text-[13px] leading-snug text-gamo-dark shadow-sm">
-            Você vai precisar de comprovante de endereço, certidão de nascimento e cartão de vacinas. 💚
-            <span className="ml-2 text-[10px] text-gamo-muted/60 float-right mt-1">14:21</span>
-          </div>
-        </div>
-      </>
-    ),
-  },
-  {
     headline: "vous aide.",
     lang: "fr",
     bgImage: "/assets/hero-man-black-street.png",
