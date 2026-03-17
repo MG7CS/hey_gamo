@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useCheckout } from "@/lib/checkout-context";
+import { useBeta } from "@/lib/beta-context";
 
 const heroSlides = [
   {
@@ -107,7 +107,7 @@ const floatingBubbles = [
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
-  const { open } = useCheckout();
+  const { open } = useBeta();
 
   useEffect(() => {
     const timer = setInterval(() => {

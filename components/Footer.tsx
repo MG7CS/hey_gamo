@@ -1,10 +1,10 @@
 "use client";
 
 import { WHATSAPP_SANDBOX_LINK } from "@/lib/config";
-import { useCheckout } from "@/lib/checkout-context";
+import { useBeta } from "@/lib/beta-context";
 
 export default function Footer() {
-  const { open } = useCheckout();
+  const { open } = useBeta();
   return (
     <footer className="bg-gamo-dark">
       <div className="mx-auto max-w-6xl px-5 py-16">
@@ -61,10 +61,10 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-gray-400">
               <li>
                 <a
-                  href="mailto:hello@heygamo.com"
+                  href="mailto:moise_gasana@brown.edu"
                   className="transition-colors hover:text-gamo-accent"
                 >
-                  hello@heygamo.com
+                  moise_gasana@brown.edu
                 </a>
               </li>
               <li>

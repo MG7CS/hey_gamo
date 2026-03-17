@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useCheckout } from "@/lib/checkout-context";
+import { useBeta } from "@/lib/beta-context";
 
 export default function SimpleCta() {
-  const { open } = useCheckout();
+  const { open } = useBeta();
   return (
     <section className="bg-white py-20 lg:py-28">
       <motion.div

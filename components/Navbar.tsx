@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useCheckout } from "@/lib/checkout-context";
+import { useBeta } from "@/lib/beta-context";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const { open } = useCheckout();
+  const { open } = useBeta();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
