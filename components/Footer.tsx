@@ -1,6 +1,5 @@
 "use client";
 
-import { WHATSAPP_SANDBOX_LINK } from "@/lib/config";
 import { useBeta } from "@/lib/beta-context";
 
 export default function Footer() {
@@ -65,16 +64,6 @@ export default function Footer() {
                   className="transition-colors hover:text-gamo-accent"
                 >
                   moise_gasana@brown.edu
-                </a>
-              </li>
-              <li>
-                <a
-                  href={WHATSAPP_SANDBOX_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-gamo-accent"
-                >
-                  +1 (650) 374-4396
                 </a>
               </li>
             </ul>
