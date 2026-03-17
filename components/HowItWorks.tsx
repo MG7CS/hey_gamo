@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { WHATSAPP_SANDBOX_LINK } from "@/lib/config";
+import { useBeta } from "@/lib/beta-context";
 
 const steps = [
   {
@@ -38,6 +38,7 @@ const steps = [
 ];
 
 export default function HowItWorks() {
+  const { open } = useBeta();
   return (
     <section className="bg-gamo-cream py-16 lg:py-24">
       <div className="mx-auto max-w-5xl px-5">
@@ -89,10 +90,8 @@ export default function HowItWorks() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-12 text-center"
         >
-          <a
-            href={WHATSAPP_SANDBOX_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={open}
             className="inline-flex items-center gap-3 rounded-full bg-gamo-accent px-8 py-4 text-lg font-bold text-white shadow-lg shadow-gamo-accent/30 transition-all hover:bg-gamo-green hover:shadow-xl active:scale-95"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -100,7 +99,7 @@ export default function HowItWorks() {
               <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.75.75 0 00.913.914l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.347 0-4.518-.801-6.24-2.144l-.436-.35-3.04 1.018 1.018-3.04-.35-.436A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
             </svg>
             Start chatting — it&apos;s free
-          </a>
+          </button>
         </motion.div>
       </div>
     </section>
