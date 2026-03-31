@@ -26,7 +26,7 @@ This site showcases the product with real WhatsApp conversation examples in mult
 - **Styling:** Tailwind CSS v4
 - **Animations:** Framer Motion
 - **Payments:** Stripe (embedded checkout)
-- **Deployment:** Vercel
+- **Deployment:** AWS
 
 ---
 
