@@ -1,4 +1,4 @@
-# GAMO Marketing Site
+# HEY GAMO
 
 A mobile-first, single-page website for GAMO - a personal WhatsApp assistant helping immigrants navigate life in a new country.
 
