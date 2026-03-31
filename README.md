@@ -1,6 +1,6 @@
 # GAMO Marketing Site
 
-A mobile-first, single-page marketing website for GAMO - a personal WhatsApp assistant helping immigrants navigate life in a new country.
+A mobile-first, single-page website for GAMO - a personal WhatsApp assistant helping immigrants navigate life in a new country.
 
 🌐 **Live Site:** [heygamo.com](https://heygamo.com)  
 📱 **WhatsApp:** [+1 415-523-8886](https://wa.me/14155238886?text=join+cow-wear) (Twilio Sandbox)
